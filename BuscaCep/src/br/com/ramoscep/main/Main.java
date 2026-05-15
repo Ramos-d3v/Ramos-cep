@@ -31,11 +31,10 @@ public class Main {
         String url = "https://viacep.com.br/ws/" + cep + "/json/";
 
         String json = consumo.obterDados(url);
-        System.out.println(json);
 
         Endereco endereco = conversor.obterDados(json, Endereco.class);
 
-        if (endereco.erro()){
+        if (endereco.erro() != null && endereco.erro()){
             System.out.println("cep não encontrado");
             input.close();
             System.out.println("Finalizando o sistema...");

@@ -3,7 +3,9 @@ package br.com.ramoscep.models;
 import com.google.gson.annotations.SerializedName;
 
 
-public record Endereco(String cep,
+public record Endereco(
+                        Boolean erro,
+                        String cep,
                        @SerializedName("logradouro")
                        String rua,
                        String complemento,
@@ -11,7 +13,8 @@ public record Endereco(String cep,
                        @SerializedName("localidade")
                        String cidade,
                        String uf,
-                       String estado) {
+                       String estado
+                       ) {
 
     @Override
     public String toString() {
